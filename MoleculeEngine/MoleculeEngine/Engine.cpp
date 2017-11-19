@@ -2,21 +2,23 @@
 #include "Engine.h"
 #include "System.h"
 
-class Engine
+Engine::Engine()
 {
-	///<summary>
-	///The constructor initializes the engine and it's systems
-	///</summary>
-	Engine();
+	
+}
 
-	///<summary>
-	///The destructor shuts off the engine and it's systems
-	///</summary>
-	~Engine();
+bool Engine::CreateSystem(System* _system)
+{
+	if (_system == nullptr && !_system->system_initialized)
+		return false;
+	m_systems.push_back(_system);
+}
 
-	///<summary>
-	///CreateSystem instantiates and initializes a system
-	///</summary>
-	bool CreateSystem(System* _system, int _flag);
 
-};
+Engine::~Engine()
+{
+	
+}
+
+
+

@@ -1,6 +1,7 @@
 #pragma once
 class Message
 {
+public:
 	Message(int _msgID, int _dataID, void* _data = nullptr);
 	~Message();
 	int msgID;

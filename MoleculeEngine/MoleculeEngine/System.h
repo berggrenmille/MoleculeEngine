@@ -11,5 +11,8 @@ class System :
 public:
 	System();
 	virtual ~System() = 0;
+
+	std::string system_name = "NONAME";
+	bool system_initialized = false;
 };
 
