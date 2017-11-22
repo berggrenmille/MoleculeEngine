@@ -1,16 +1,18 @@
 #include "stdafx.h"
 #include "Display.h"
 #include "GL/glew.h"
-#include "MessageDataEnum.h"
+#include "Message.h"
 
-Display::Display()
+
+Display::Display(char* title)
+	:	TITLE(title)
 {
 	system_name = std::string(TITLE) + ": Display";
 	if (Initialize())	
-		system_initialized = true;	
+		system_ready = true;	
 }
 
-void Display::OnMessage(Message _msg)
+void Display::OnNotify(Message _msg)
 {
 	if (_msg.dataID == MoleculeEngine::MSG_UPDATE)
 		Refresh();
@@ -85,7 +87,7 @@ void Display::ToggleFullscreen() const
 void Display::Refresh() const
 {
 	SDL_GL_SwapWindow(window);
-	glClearColor(0.0f, 0.0f, 0.f, 1.0f);
+	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 

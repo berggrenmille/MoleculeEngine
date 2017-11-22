@@ -2,12 +2,11 @@
 //
 
 #include "stdafx.h"
-
+#include "Engine.h"
+#include "MoleculeEngine.h"
 int main()
 {
-	char* i = new char[512];
-	std::cin >> i;
-	delete i;
+	Engine engine;
+
 	return 0;
 }
-

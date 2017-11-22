@@ -5,18 +5,16 @@ class Display :
 	public System
 {
 public:
-	Display();
-	void OnMessage(Message _msg) override;
+	Display(char* title = "SDL");
+	void OnNotify(Message _msg) override;
 	~Display();
 
 	SDL_Window& GetWindow() const;
 	bool IsOpen() const;
 
-	int WIDTH = 1280;
-	int HEIGHT = 720;
-	const char* TITLE = "MolecularEngine";
 private:
 	bool Initialize();
+
 	void Resize(int _w, int _h);
 	void ToggleFullscreen() const;
 	void Refresh() const;
@@ -24,6 +22,9 @@ private:
 
 	void SetOpenGLAttributes();
 
+	int WIDTH = 1280;
+	int HEIGHT = 720;
+	const char* TITLE;
 	// Our SDL window
 	SDL_Window* window;
 	// Our SDL screen

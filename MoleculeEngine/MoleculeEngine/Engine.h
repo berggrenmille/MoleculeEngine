@@ -1,5 +1,5 @@
 #pragma once
-#include "MessageSubject.h"
+#include "IMessageSubject.h"
 class System;
 
 class Engine
@@ -20,13 +20,14 @@ public:
 	///</summary>
 
 	///<summary>
-	///CreateSystem instantiates and initializes a system
+	///CreateSystem prepares and initializes a system
 	///</summary>
 	bool CreateSystem(System* _system);
 
-	MessageSubject MsgHub;
+	
 private:
 	std::list<System*> m_systems;
+	IMessageSubject m_messageHub;
 };
 
 namespace ListHelper

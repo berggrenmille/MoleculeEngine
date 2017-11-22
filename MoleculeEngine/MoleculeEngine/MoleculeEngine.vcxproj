@@ -155,19 +155,20 @@
     <ClInclude Include="Display.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Message.h" />
-    <ClInclude Include="MessageDataEnum.h" />
-    <ClInclude Include="MessageObserver.h" />
-    <ClInclude Include="MessageSubject.h" />
+    <ClInclude Include="IMessageObserver.h" />
+    <ClInclude Include="IMessageSubject.h" />
+    <ClInclude Include="MoleculeEngine.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Message.cpp" />
-    <ClCompile Include="MessageObserver.cpp" />
-    <ClCompile Include="MessageSubject.cpp" />
+    <ClCompile Include="IMessageObserver.cpp" />
+    <ClCompile Include="IMessageSubject.cpp" />
     <ClCompile Include="MoleculeEngine.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -176,6 +177,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="System.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
